@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "cp **/target/*.war /home/chiix/Downloads/tomcat/tomcat-staging/webapps"
+                        sh "scp **/target/*.war /home/chiix/Downloads/tomcat/tomcat-staging/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "cp **/target/*.war /home/chiix/Downloads/tomcat/tomcat-prod/webapps"
+                        sh "scp **/target/*.war /home/chiix/Downloads/tomcat/tomcat-prod/webapps"
                     }
                 }
             }
